@@ -1,66 +1,4 @@
-/*
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación.
-//  Aquí deberás desarrollar la lógica para resolver el problema.
-
-
-//Asignamos un array para guardar los nombres ingresados por el usuario
-let nombres = [];
-let nombre1;
-
-//Esta funcion sirve para guardar los nombres que ingresa el usuario 
-function agregarNombres() {
-    let nombre1 = document.getElementById("amigo").value;
-    nombres.push(`${nombre1}`);
-    console.log(nombres)
- }
-
-//Con esto alteramos el texto mostrado en pantalla
-function asignarTextoElemento (elemento, texto) {
-    let elementoHTML = document.querySelector(elemento);
-    elementoHTML.innerHTML = texto; 
-    return;
-}
-
-
-//Esta funcion retorna el nombre ingresado por el usuario
-function agregarAmigo() {
-    let nombreIngresado = document.getElementById("amigo").value; 
-    console.log(nombreIngresado)
-    agregarNombres();
-    limpiarCaja();
-    return;
-}
-
-//Esta funcion es activada cuando se presiona el boton de "sortear amigo", la misma elige de forma 
-// aleatoria un nombre del array "nombres". Y lo muestra sobre el "H2" para indicar quien es el amigo secreto.
-function sortearAmigo() {
-    let aleatorio = nombres[(Math.floor(Math.random() * (nombres.length)))];
-    console.log(aleatorio);
-    asignarTextoElemento ("h2" , `El amigo secreto es ${aleatorio}!`);
-    return;
-}
-
-
-//Esta funcion fue creada para limpiar la caja una vez el usuario hace "click" en añadir.
-function limpiarCaja() {
- document.getElementById("amigo").value = ""
-    
-}
-
-
-//llamamos a la funcion para cambiar el texto
-asignarTextoElemento ("h1" , "Juego del Amigo secreto por uri :)");
-asignarTextoElemento ("h2" , "Por favor ingresa el nombre de tus amigos");
-
-*/
-
-
-
-
-
-
 // Array para almacenar los nombres de amigos
-
 let amigos = [];
 
 //Funcion para agregar un amigo
@@ -69,12 +7,12 @@ function agregarAmigo() {
     const nombreAmigo = inputAmigo.value.trim();
 
 
-//Validar que el campo no este vacio
+//Validar que la casilla no este vacia
 if (nombreAmigo === "") {
     alert("El campo esta vacio, por favor ingrese un nombre");
     return;    
 }
-//Validar que el nombre no este duplicado
+//Validar que el nombre no este repetido
 if (amigos.includes(nombreAmigo)) {
     alert(`El nombre ${nombreAmigo} ya esta en la lista`);
     return;
@@ -82,7 +20,7 @@ if (amigos.includes(nombreAmigo)) {
 //Agregar el nombre al array de amigos
 amigos.push(nombreAmigo);
 
-//Limpiar ek campo de entrada
+//Limpiar el campo de entrada
 inputAmigo.value = "";
 
 //Actualizar la lista en HTML
